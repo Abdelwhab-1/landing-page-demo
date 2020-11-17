@@ -29,7 +29,7 @@ let navList = document.getElementById("navbar__list"); // the unordered list
 */
 
 let callback = (entries, observer) =>{
-    entries.forEach(entry => {
+    for (entry of entries){
         let element = entry.target.parentElement ;// this gets the section 
         if (entry.intersectionRatio > .5){ //if half of the div child of element(section) is in the viewport do the next 
             if (! element.classList.contains("your-active-class") ){ // check if the section isn't highlighted 
@@ -46,7 +46,10 @@ let callback = (entries, observer) =>{
        
 
     }
-    })
+    }
+
+
+    
         
 
     };
@@ -134,5 +137,5 @@ scroll();
 // Set sections as active
 changView(callback)
 
-// 
+// nav visibilty controler 
 navVisibility(header)
